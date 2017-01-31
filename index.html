@@ -24,28 +24,101 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section id="fragments">
 					<h1>The Marriage of Cloud, HPC and Containers</h1>
-					<h3>...and serverless?</h3>
-					<h3>Adam Huffman</h3>
-					<h3>The Francis Crick Institute</h3>
+					<h4 class="fragment">...and serverless?</h4>
 				</section>
 				<section>
-					<p>Pressure from funding bodies</p>
+					<h3>Adam Huffman</h3>
+					<h4>Senior HPC and Cloud Systems Engineer</h4>
+					<h4>The Francis Crick Institute</h4>
 				</section>
-				<section>eMedLab</section>
+				<section>
+					<h3>Status Quo in Peril</h3>
+					<p class="fragment highlight-red">Pressure from funding bodies</p>
+					<p class="fragment highlight-red">Pressure from procurement</p>
+					<p class="fragment highlight-red">Deadline-driven bursting</p>
+					<aside class="notes">
+						Why don't we just buy time on Amazon?
+					</aside>
+					<aside class="notes">
+						We have this Nature paper coming up with our collaborators...
+					</aside>
+				</section>
+				<section>eMedLab
+					<p>Biomedical research cloud, sharing data, methods and expertise</p>
+					<p>6,048 cores, 5PB storage</p>
+					<p>OpenStack, GPFS</p>
+				</section>
 				<section>GPFS
 					<p>Benign environment assumption</p>
 					<p>Licensing complications</p>
-					<p>Clarification from IBM as part of eMedLab</p>
+					<aside class="notes">
+						Clarification from IBM as part of eMedLab
+					</aside>
 					<p>NFS export</p>
 				</section>
-				<section>Data download</section>
-				<section>Performance/Flexibility Tradeoffs
+				<section>Data download
+					<p>800TB dataset from TCGC</p>
+					<p>Restricted access</p>
+					<p>Special client</p>
+					<p>Multiple instances</p>
+				</section>
+				<section>
+					Importance of shared filesystem access
+					<ul>
+						<li>Scientific reference datasets</li>
+						<li>Better served via object storage?</li>
+						<li>Application support for objects?</li>
+					</ul>
+					<p>Anecdotal evicence that Manila does not work well, not wide vendor support</p>
+					<p>IBM pushing towards containers rather than VMs, for GPFS</p>
+				</section>
+				<section>
+					<h2>Performance/Flexibility Tradeoffs</h2>
 					<p>Performance tuning of clouds</p>
 					<p>Lose e.g. live migration</p>
 				</section>
-				<section>Containers</section>
+				<section>Containers The Unstoppable Hype Machine
+					<p>Driven by hyperscale mindset and capabilities</p>
+					<p>And startups, container start faster than DNS query</p>
+				</section>
+				<section>Abstraction layers
+					<p>Users focus on images and snapshots</p>
+					<ul>
+						<li>Is this the right level of abstraction</li>
+						<li>Use repeatable confiuration management/provisioning instead?</li>
+						<li>Cf. people don't tend to use images alone for bare-metal provisioning</li>
+						<li>How to update them</li>
+						<li>Image catalogues</li>
+					</ul>
+				</section>
+				<section>Serverless
+				</section>
+				<section>
+					The comfort/familiarity of batch clusters on clouds
+					How well are the characteristics of pipelines known?
+					Only start VMs as needed
+					Reflects historical focus on high utilisation, rather than "time to science"
+				</section>	
+				<section>
+					CMS/CERN High Energy Physics
+					Simply treat clouds as nice new resources
+					Already have tools to handle remote data transparently
+					Already have accounting tools 
+					Advantages of grid experience
+					Concerns about security
+				</section>
+				<section>
+Pushing Scientific Features Upstream
+
+    Current problem with users’ ability to close other users instances, and clash with OpenStack upstream
+        fixed in Newton
+        How responsive are upstream to “real user problems” like this?
+            Cf. scheduler, premptible instances
+        How many requirements can such a project set for potential resource providers?
+    Premptible instances talk
+				</section>
 			</div>
 		</div>
 
@@ -56,17 +129,14 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-				progress: true,
-				keyboard: true,
-				overview: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
 				]
 			});
 		</script>

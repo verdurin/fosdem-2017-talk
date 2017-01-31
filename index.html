@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>The Marriage of Cloud, HPC and Containers</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,28 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section id="fragments">
+					<h1>The Marriage of Cloud, HPC and Containers</h1>
+					<h3 class="fragments">...and serverless?</h3>
+					<h3>Adam Huffman</h3>
+					<h3>The Francis Crick Institute</h3>
+				</section>
+				<section>
+					<p>Pressure from funding bodies</p>
+				</section>
+				<section>eMedLab</section>
+				<section>GPFS
+					<p>Benign environment assumption</p>
+					<p>Licensing complications</p>
+					<p>Clarification from IBM as part of eMedLab</p>
+					<p>NFS export</p>
+				</section>
+				<section>Data download</section>
+				<section>Performance/Flexibility Tradeoffs
+					<p>Performance tuning of clouds</p>
+					<p>Lose e.g. live migration</p>
+				</section>
+				<section>Containers</section>
 			</div>
 		</div>
 
@@ -36,6 +56,9 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				progress: true,
+				keyboard: true,
+				overview: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
@@ -43,6 +66,7 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
 				]
 			});
 		</script>

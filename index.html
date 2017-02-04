@@ -77,9 +77,9 @@
 				</section>
 				<section>
 					<h3>GPFS</h3>
-					<p>Benign environment assumption</p>
-					<p>Licensing complications</p>
-					<p>NFS export</p>
+					<p class="fragment highlight-green">Benign environment assumption</p>
+					<p class="fragment highlight-green">Licensing complications</p>
+					<p class="fragment highlight-green">NFS export</p>
 					<aside class="notes">
 						Clarification from IBM initiated by eMedLab and CLIMB
 					</aside>
@@ -101,10 +101,10 @@
 				</section>
 				<section>
 					<h2>Data access example</h2>
-					<p class="fragment">800TB dataset from TCGC</p>
-					<p class="fragment">Restricted access</p>
-					<p class="fragment">Special client</p>
-					<p class="fragment">Multiple instances</p>
+					<p class="fragment highlight-blue">800TB dataset from TCGC</p>
+					<p class="fragment highlight-blue">Restricted access</p>
+					<p class="fragment highlight-blue">Special client</p>
+					<p class="fragment highlight-blue">Multiple instances</p>
 					<aside class="notes">
 						How much of an impediment to access are these domain-specific clients?
 					</aside>
@@ -114,11 +114,11 @@
 				</section>
 				<section>
 					<h2>Virtual clusters</h2>
-					<p>Elasticluster</p>
-					<p>Heat</p>
-					<p>Ansible/Salt etc.</p>
-					<p>Back to importance of shared filesystem access</p>
-					<p>Are they actually the best fit for clouds?</p>
+					<p class="fragment highlight-green">Elasticluster</p>
+					<p class="fragment highlight-green">Heat</p>
+					<p class="fragment highlight-green">Ansible/Salt etc.</p>
+					<p class="fragment highlight-green">Back to importance of shared filesystem access</p>
+					<p class="fragment highlight-green">Are they actually the best fit for clouds?</p>
 					<aside class="notes">
 						Examples from devroom last year
 					</aside>
@@ -136,6 +136,8 @@
 					<p class="fragment">Rising software complexity</p>
 					<aside class="notes">
 						Cf. faster to write slow Python code than learn how to write fast C or assembler code
+					</aside>
+					<aside class="notes">
 						Big Data approaches, integrating different data types, more important than raw speed?
 					</aside>
 				</section>
@@ -143,42 +145,45 @@
 				</section>
 				<section>
 					<h2>Containers The Unstoppable Hype Machine</h2>
-					<p>Driven by hyperscale mindset and capabilities</p>
+					<p>Hyperscale mindset and capabilities</p>
 					<p>And startups, container start faster than DNS query</p>
 					<p>Maturity of container support for scientific applications</p>
-					<p>Cf. Singularity, Shifter</p>
-					<p>Worth the effort of "containerising" or even refactoring to microservices?</p>
-					<p>What are the benefits for users?</p>
+					<p>Singularity, Shifter "fixing" containers for scientific use </p>
 					<aside class="notes">
 						Research Software Engineering groups becoming established now
 						Can they embrace containerisation too, as well as traditional optimisation/refactoring?
 					</aside>
 				</section>
 				<section>
+					<h2>Serverless</h2>
+					<p>Lambda</p>
+					<p>Google Cloud Functions</p>
+					<p>OpenWhisk</p>
+					<p>Fission</p>
+					<p class="fragment highlight-red">Will science have a say?</p>
+				</section>
+				<section>
 					<h2>Abstraction layers</h2>
 					<p>Users focus on images and snapshots</p>
-					<ul>
-						<li>Is this the right level of abstraction</li>
-						<li>Use repeatable confiuration management/provisioning instead?</li>
-						<li>Cf. people don't tend to use images alone for bare-metal provisioning</li>
-						<li>How to update them</li>
-						<li>Image catalogues</li>
-					</ul>
+					<p class="fragment highlight-blue">Is this the right level of abstraction</p>
+					<p class="fragment highlight-blue">Use repeatable configuration management/provisioning instead?</p>
+					<p class="fragment highlight-blue">Criticism of TripleO for being image-centric</p>
+					<p class="fragment highlight-blue">How to update them</p>
+					<li>Image catalogues</p>
 					<aside class="notes">
 						Maybe better to use package version pinning e.g. with Satellite
+					</aside>
+					<aside class="notes">
 						Mention of doing that in Puppet at OpenStack Meetup
 					</aside>
 				</section>
-				<section>Serverless
-					<p>Will the available functions grow to include scientifically useful ones?</p>
-				</section>
 				<section>
 					<h2>CMS/CERN High Energy Physics</h2>
-					<p>Simply treat clouds as nice new resources</p>
-					<p>Already have tools to handle remote data transparently</p>
-					<p>Already have accounting tools</p> 
-					<p>Advantages of grid experience</p>
-					<p>Concerns about security</p>
+					<p class="fragment highlight-green">Simply treat clouds as nice new resources</p>
+					<p class="fragment highlight-green">Already have tools to handle remote data transparently</p>
+					<p class="fragment highlight-green">Already have accounting tools</p> 
+					<p class="fragment highlight-green">Advantages of grid experience</p>
+					<p class="fragment highlight-green">Concerns about security</p>
 					<aside class="notes">
 						Specifically, traceability, for when there is an intrusion or incident
 					</aside>

@@ -24,14 +24,28 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section id="fragments">
+				<section>
 					<h1>The Marriage of Cloud, HPC and Containers</h1>
 					<h4 class="fragment">...and serverless?</h4>
 				</section>
 				<section>
 					<h3>Adam Huffman</h3>
-					<h4>Senior HPC and Cloud Systems Engineer</h4>
-					<h4>The Francis Crick Institute</h4>
+					<p>Senior HPC and Cloud Systems Engineer</p>
+					<p>The Francis Crick Institute</p>
+					<p><a href="https://twitter.com/adamhuffman">@adamhuffman</a></p>
+					<p><a href="mailto:adam.huffman@crick.ac.uk">adam.huffman@crick.ac.uk</a></p>
+				</section>
+				<section data-background-image="images/Crick-Lab.jpg">
+					<h2>The Francis Crick Institute</h2>
+					<p>Biomedical discovery institute dedicated to understanding the fundamental biology underlying health and disease</p>
+					<p>Biggest biomedical research facility under a single roof in Europe</p>
+					<p>1,500 staff, £650m investment</p>
+					<aside class="notes">
+						Partnership between:
+						MRC, Cancer Research UK, 
+						Wellcome, UCL, Imperial College London 
+						and King's College London.
+					</aside>
 				</section>
 				<section>
 					<h3>HPC Status Quo in Peril</h3>
@@ -42,63 +56,90 @@
 						Why don't we just buy time on Amazon?
 					</aside>
 					<aside class="notes">
+						Costings for GridPP
+					</aside>
+					<aside class="notes">
+						Debate over Archer costs at CIUK
+					</aside>
+					<aside class="notes">
 						We have this Nature paper coming up with our collaborators...
 					</aside>
 				</section>
-				<section>eMedLab
-					<p>Biomedical research cloud, sharing: data, methods and expertise</p>
-					<p>6,048 cores, 5PB storage</p>
-					<p>OpenStack, GPFS</p>
+				<section>
+					<h3>eMedLab</h3>
+					<p><a href="http://www.emedlab.ac.uk">http://www.emedlab.ac.uk</a></p>
+					<p class="fragment highlight-green">Biomedical research cloud, with 6,048 cores and 5.5PB storage</p>
+					<p class="fragment highlight-green">Share data, methods and expertise</p>
+					<p class="fragment highlight-green">OpenStack, GPFS</p>
+					<aside class="notes">
+						Consortium: Crick, UCL, QMUL, Sanger, EBI, KCL, LSHTM
+					</aside>
 				</section>
-				<section>GPFS
+				<section>
+					<h3>GPFS</h3>
 					<p>Benign environment assumption</p>
 					<p>Licensing complications</p>
+					<p>NFS export</p>
 					<aside class="notes">
 						Clarification from IBM initiated by eMedLab and CLIMB
 					</aside>
-					<p>NFS export</p>
-				</section>
-				<section>
-					<h2>Data download</h2>
-					<p>800TB dataset from TCGC</p>
-					<p>Restricted access</p>
-					<p>Special client</p>
-					<p>Multiple instances</p>
-					<aside class="note"s>
-						How much of an impediment to access are these domain-specific clients?
+					<aside class="notes">
+						Anecdotal evidence that Manila does not work well, not wide vendor support
+					</aside>
+					<aside class="notes">
+						IBM pushing towards containers rather than VMs, for GPFS
 					</aside>
 				</section>
 				<section>
-					<h2>Importance of shared filesystem access</h2>
-					<ul>
-						<li>Scientific reference datasets</li>
-						<li>Better served via object storage?</li>
-						<li>Application support for objects?</li>
-					</ul>
-					<p>Anecdotal evicence that Manila does not work well, not wide vendor support</p>
-					<p>IBM pushing towards containers rather than VMs, for GPFS</p>
+					<h3>Importance of shared filesystem access</h3>
+					<p class="fragment highlight-blue">Scientific reference datasets</p>
+					<p class="fragment highlight-blue">Object storage?</p>
+					<p class="fragment highlight-blue">Application support for objects?</p>
+					<aside class="notes">
+						In addition to newly-generated data
+					</aside>
+				</section>
+				<section>
+					<h2>Data access example</h2>
+					<p class="fragment">800TB dataset from TCGC</p>
+					<p class="fragment">Restricted access</p>
+					<p class="fragment">Special client</p>
+					<p class="fragment">Multiple instances</p>
+					<aside class="notes">
+						How much of an impediment to access are these domain-specific clients?
+					</aside>
+					<aside class="notes">
+						Trial and error to find optimal number of instances to maximise throughput
+					</aside>
 				</section>
 				<section>
 					<h2>Virtual clusters</h2>
 					<p>Elasticluster</p>
 					<p>Heat</p>
+					<p>Ansible/Salt etc.</p>
 					<p>Back to importance of shared filesystem access</p>
 					<p>Are they actually the best fit for clouds?</p>
+					<aside class="notes">
+						Examples from devroom last year
+					</aside>
 				</section>
 				<section>
-					<h2>The comfort/familiarity of batch clusters on clouds</h2>
+					<h2>The comfort of clusters</h2>
 					<p>How well are the characteristics of pipelines known?</p>
 					<p>Only start VMs as needed</p>
-					<p>Reflects historical focus on high utilisation, rather than "time to science"</p>
+					<p>Reflects focus on high utilisation, rather than "time to science"</p>
 				</section>	
 				<section>
 					<h2>Performance/Flexibility Tradeoffs</h2>
-					<p>Performance tuning of clouds</p>
-					<p>Lose e.g. live migration</p>
-					<p>Maybe VM flexibility is sufficient and overrides other considerations?</p>
+					<p class="fragment">Performance tuning of clouds</p>
+					<p class="fragment">Flexibility cost</p>
+					<p class="fragment">Rising software complexity</p>
 					<aside class="notes">
 						Cf. faster to write slow Python code than learn how to write fast C or assembler code
+						Big Data approaches, integrating different data types, more important than raw speed?
 					</aside>
+				</section>
+				<section background-size="70%" data-background-image="http://www.wwwlicious.com/content/images/2016/05/monolith-microservices.jpg">
 				</section>
 				<section>
 					<h2>Containers The Unstoppable Hype Machine</h2>
@@ -132,7 +173,7 @@
 					<p>Will the available functions grow to include scientifically useful ones?</p>
 				</section>
 				<section>
-					CMS/CERN High Energy Physics
+					<h2>CMS/CERN High Energy Physics</h2>
 					<p>Simply treat clouds as nice new resources</p>
 					<p>Already have tools to handle remote data transparently</p>
 					<p>Already have accounting tools</p> 
@@ -152,6 +193,9 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				progress: true,
+				center: true,
+				keyboard: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
